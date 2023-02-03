@@ -33,3 +33,11 @@ jobs:
 
       - name: "Run terraform apply"
         run: terraform apply -auto-approve -no-color
+        
+on:
+    workflow_dispatch:
+jobs:
+  destroy_terraform:
+      - name: "destroy everything created"
+        run: terraform destroy -auto-approve
+        
