@@ -40,6 +40,9 @@ jobs:
       environment:
         name: DEV
       steps:
+      
+          - name: "intialize terraform"
+            run: terraform init
           - name: "destroy everything created"
             run: terraform destroy -auto-approve
         
