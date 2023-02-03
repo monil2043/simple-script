@@ -34,15 +34,3 @@ jobs:
       - name: "Run terraform apply"
         run: terraform apply -auto-approve -no-color
         
-  destroy_terraform:
-      needs: deploy_terraform
-      runs-on: ubuntu-latest
-      environment:
-        name: DEV
-      steps:
-      
-          - name: "intialize terraform"
-            run: terraform init
-          - name: "destroy everything created"
-            run: terraform destroy -auto-approve
-        
